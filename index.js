@@ -29,9 +29,7 @@ app.post("/resize", async (req, res) => {
       })
       .toBuffer();
 
-    const resizedBase64Image = `data:image/jpeg;base64,${resizedBuffer.toString(
-      "base64"
-    )}`;
+    const resizedBase64Image = resizedBuffer.toString("base64");
 
     res.json({ resizedImage: resizedBase64Image });
   } catch (error) {
